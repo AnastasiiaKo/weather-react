@@ -1,5 +1,6 @@
 import React from "react";
 import "./Weather.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Weather() {
   let weatherData = {
@@ -33,6 +34,16 @@ export default function Weather() {
               <div className="col search-button">
                 <button type="submit" className="btn btn-primary mb-3">
                   Search
+                </button>
+              </div>
+              <div class="col current-button">
+                <button
+                  type="button"
+                  className="btn btn-success"
+                  id="button-location"
+                >
+                  {" "}
+                  Current{" "}
                 </button>
               </div>
             </form>
