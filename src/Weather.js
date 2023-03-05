@@ -48,10 +48,7 @@ export default function Weather() {
               <div className="temp-today">
                 <span className="temperature">{weatherData.temperature}</span>
                 <span className="units">
-                  <a href="" className="active">
-                    °C
-                  </a>{" "}
-                  |<a href="">°F</a>
+                    °C |°F
                 </span>
               </div>
               Feels Like <span>22</span> &deg;
