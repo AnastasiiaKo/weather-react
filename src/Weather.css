@@ -39,6 +39,12 @@
     left: 47px;
     padding: 0;
   }
+
+  .Weather .current-button {
+    position: relative;
+    left: 36px;
+    padding: 0;
+  }
   
   .Weather .box-today {
     padding: 0 0 0 10px;
@@ -59,8 +65,8 @@
     font-size: 15px;
     color: #fff;
     position: relative;
-    top: -36px;
-    left: -20px;
+    top: -25px;
+    left: 5px;
   }
   
   .Weather .box-today .active {
@@ -81,8 +87,9 @@
   
   .Weather .signature {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto 0 365px;
     font-size: small;
+    
   }
   
   .Weather .link {

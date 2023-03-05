@@ -82,9 +82,9 @@ export default function Weather() {
           target="_blank"
           rel="noreferrer"
         >
-          Open-source code
+          Open-source code 
         </a>
-        by Anastasiia Kosinova
+         {" "}by Anastasiia Kosinova
       </div>
     </div>
   );
