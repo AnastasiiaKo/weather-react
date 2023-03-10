@@ -78,12 +78,12 @@ export default function Weather() {
       </div>
       <div className="signature">
         <a
-          href="https://github.com/wecodeschool/my-awsome-app"
+          href="https://github.com/AnastasiiaKo/weather-react"
           className="link"
           target="_blank"
           rel="noreferrer"
         >
-          Open-source code 
+          Open-source code on GitHub
         </a>
          {" "}by Anastasiia Kosinova
       </div>
