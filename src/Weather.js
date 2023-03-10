@@ -47,6 +47,7 @@ export default function Weather() {
                 </button>
               </div>
             </form>
+
           </div>
 
           <div className="row align-items-start">
