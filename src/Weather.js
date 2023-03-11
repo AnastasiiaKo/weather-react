@@ -9,13 +9,13 @@ export default function Weather() {
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
-      city: response.data.name,
+      city: response.data.main.name,
       date: "MONDAY 12:00",
       description: "Party Cloudy",
       imgUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
-      temperature: response.data.main.temp,
+      temperature: "",
       humidity: "72",
-      wind: "6"
+      wind: ""
     });
     
     setReady(true);
@@ -88,8 +88,9 @@ export default function Weather() {
     </div>
   );
   } else {
-    const apiKey = "c73627997b1d23b47d143634c55fed12";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${weatherData.city}&appid=${apiKey}&units=metric`;
+    const apiKey = "ded93636eb7b5fe9e7d49e20c4422f20";
+    let city = "New York";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 
     axios.get(apiUrl).then(handleResponse);
 
