@@ -1,18 +1,14 @@
 .Weather body {
     font-family: "Josefin Sans", sans-serif;
-    margin-top: 90px;
+    
     background: rgb(221, 221, 221);
   }
   
   .Weather .box {
     background-color: #55688a;
-    margin: 0 auto;
-    max-width: 550px;
     color: #fff;
     border-radius: 20px;
     padding: 15px;
-    display: block;
-    margin: 15px auto 0 auto;
   }
   
   .Weather h1 {
@@ -83,13 +79,6 @@
     font-size: 14px;
     margin-top: 15px;
     text-align: center;
-  }
-  
-  .Weather .signature {
-    max-width: 600px;
-    margin: 0 auto 0 365px;
-    font-size: small;
-    
   }
   
   .Weather .link {
