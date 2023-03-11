@@ -3,8 +3,9 @@ import axios from "axios";
 import "./Weather.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function Weather() {
+export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
@@ -55,9 +56,7 @@ export default function Weather() {
                 </button>
               </div>
             </form>
-
           </div>
-
           <div className="row align-items-start">
             <div className="col-4">
               <img src={weatherData.imgUrl} alt="wether today" />
@@ -88,8 +87,7 @@ export default function Weather() {
   );
   } else {
     const apiKey = "ded93636eb7b5fe9e7d49e20c4422f20";
-    let city = "New York";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);
 
