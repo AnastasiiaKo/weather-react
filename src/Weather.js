@@ -10,7 +10,7 @@ export default function Weather(props) {
     console.log(response.data);
     setWeatherData({
       ready: true,
-      city: response.data.main.name,
+      city: response.data.name,
       date: "MONDAY 12:00",
       description: response.data.weather[0].description,
       imgUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
