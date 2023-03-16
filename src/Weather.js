@@ -71,14 +71,6 @@ export default function Weather(props) {
                 </button>
               </div>
               <div class="col current-button">
-                <button
-                  type="button"
-                  className="btn btn-success"
-                  id="button-location"
-                >
-                  {" "}
-                  Current{" "}
-                </button>
               </div>
             </form>
           </div>
