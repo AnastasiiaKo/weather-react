@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
     console.log(response.data);
@@ -14,12 +15,30 @@ export default function Weather(props) {
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      imgUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+      imgUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
-      wind: response.data.wind.speed
+      wind: response.data.wind.speed,
+      feelsLike: response.data.main.feels_like,
+      tempMin: response.data.main.temp_min,
+      tempMax: response.data.main.temp_max
     });
+  }
 
+  function search() {
+    const apiKey = "ded93636eb7b5fe9e7d49e20c4422f20";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function hendleSubmit(event) {
+    event.preventDefault()
+    search(city);
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
   }
 
   if (weatherData.ready){
@@ -28,7 +47,7 @@ export default function Weather(props) {
       <div className="box">
         <div className="container">
           <div className="row">
-            <form className="row mb-3">
+            <form className="row mb-3" onSubmit={hendleSubmit}>
               <div className="col-5">
                 <h1>{weatherData.city}</h1>
                 <div className="text-uppercase">
@@ -41,6 +60,7 @@ export default function Weather(props) {
                   className="form-control"
                   placeholder="Tipe a city..."
                   autocomplete="off"
+                  onChange={handleCityChange}
                 ></input>
               </div>
               <div className="col search-button">
@@ -73,10 +93,10 @@ export default function Weather(props) {
                     °C |°F
                 </span>
               </div>
-              Feels Like <span>22</span> &deg;
+              Feels Like <span>{Math.round(weatherData.feelsLike)}</span> &deg;
             </div>
             <div className="col p-0">
-              &#709; <span>20</span>&deg; &#708; <span>27</span>&deg;
+              &#709; <span>{Math.round(weatherData.tempMin)}</span>&deg; &#708; <span>{Math.round(weatherData.tempMax)}</span>&deg;
               <br />
               Wind: <span>{Math.round(weatherData.wind)}</span> km/h
               <br />
@@ -89,13 +109,7 @@ export default function Weather(props) {
     </div>
   );
   } else {
-    const apiKey = "ded93636eb7b5fe9e7d49e20c4422f20";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-
-    axios.get(apiUrl).then(handleResponse);
-
+    search();
     return "Loading...";
   }
-
-
 }
