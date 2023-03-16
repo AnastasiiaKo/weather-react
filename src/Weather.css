@@ -52,24 +52,23 @@
     margin-top: 22px;
   }
   
-  .Weather .temperature {
-    margin-right: 0;
-    top: -29px;
-  }
-  
-  .Weather .units {
-    font-size: 15px;
-    color: #fff;
-    position: relative;
-    top: -25px;
-    left: 5px;
-  }
-  
   .Weather .box-today .active {
     color: #fff;
     text-decoration: none;
     cursor: default;
   }
+  .Weather .temperature {
+    margin-right: 0;
+    top: -29px;
+  }
+  
+.Weather .units {
+    font-size: 15px;
+    color: #fff;
+    position: relative;
+    top: -25px;
+    left: 5px;
+}
   
   .Weather .day-week {
     border-radius: 10px;
