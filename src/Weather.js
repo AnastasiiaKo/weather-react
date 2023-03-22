@@ -2,6 +2,7 @@ import React, { useState }  from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 import "./Weather.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -77,7 +78,7 @@ export default function Weather(props) {
           <div className="row align-items-start">
             <div className="col-4">
               <div>
-                <WeatherIcon code={weatherData.icon} />
+                <WeatherIcon code={weatherData.icon} size={70}/>
               </div>
               <span className="text-capitalize">{weatherData.description}</span>
             </div>
@@ -95,7 +96,7 @@ export default function Weather(props) {
               &#128167; <span>{weatherData.humidity}</span>%
             </div>
           </div>
-          <div className="forecast-weather"></div>
+          <WeatherForecast />
         </div>
       </div>
     </div>

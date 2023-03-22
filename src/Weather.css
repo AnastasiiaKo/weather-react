@@ -70,16 +70,6 @@
     left: 5px;
 }
   
-  .Weather .day-week {
-    border-radius: 10px;
-    margin: 3px;
-    background: #7b89a4;
-    padding: 5px 15px;
-    font-size: 14px;
-    margin-top: 15px;
-    text-align: center;
-  }
-  
   .Weather .link {
     text-decoration: none;
   }
